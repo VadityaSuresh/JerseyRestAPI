@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Service Request Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f4f4f4;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #555;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+    td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      vertical-align: top;
+    }
+    .no-border td {
+      border: none;
+      padding: 4px;
+    }
+    .header {
+      font-weight: bold;
+      background-color: #f0f0f0;
+    }
+    .description {
+      background: #c49100;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+    }
+    .description-box {
+      background: #fefefe;
+      height: 100px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .smartsheet {
+      float: right;
+      text-align: center;
+      border: 1px solid #ccc;
+      width: 250px;
+      height: 150px;
+      padding-top: 10px;
+      margin-left: 20px;
+    }
+    .green-btn {
+      background: #00c000;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div style="overflow: hidden;">
+    <div style="float: left;">
+      <h2>CUSTOMER SERVICE<br>REQUEST FORM</h2>
+      <table class="no-border">
+        <tr><td>{{headerInput1}}</td></tr>
+        <tr><td>{{headerInput2}}</td></tr>
+        <tr><td>{{headerInput3}}</td></tr>
+        <tr><td>{{headerInput4}}</td></tr>
+      </table>
+    </div>
+    <div class="smartsheet">
+      <a href="#" class="green-btn">Try Smartsheet for FREE</a>
+    </div>
+  </div>
+
+  <h3 style="text-align: right; color: gray;">WORK ORDER</h3>
+
+  <table>
+    <tr class="header">
+      <td>REQUESTER NAME</td>
+      <td>{{requesterName}}</td>
+      <td>LOCATION ADDRESS</td>
+      <td>{{locationAddress}}</td>
+    </tr>
+    <tr>
+      <td>PHONE</td>
+      <td>{{phone}}</td>
+      <td rowspan="2" colspan="2">{{locationDetails}}</td>
+    </tr>
+    <tr>
+      <td>EMAIL</td>
+      <td>{{email}}</td>
+    </tr>
+  </table>
+
+  <table>
+    <tr class="header">
+      <td>PRIORITY LEVEL</td>
+      <td>{{priorityLevel}}</td>
+      <td>ORDER DATE AND TIME</td>
+      <td>{{orderDateTime}}</td>
+    </tr>
+    <tr>
+      <td>DATE NEEDED</td>
+      <td>{{dateNeeded}}</td>
+      <td>DATE DELIVERED</td>
+      <td>{{dateDelivered}}</td>
+    </tr>
+  </table>
+
+  <table>
+    <tr class="header">
+      <td>WORK ASSIGNED TO</td>
+      <td>{{workAssignedTo}}</td>
+      <td>WORK BILLED TO</td>
+      <td>{{workBilledTo}}</td>
+    </tr>
+  </table>
+
+  <div class="description">REQUEST DESCRIPTION</div>
+  <div class="description-box">{{description}}</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee">
+    <display-name>Jersey Web App</display-name>
+
+    <servlet>
+        <servlet-name>JerseyRESTService</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>com.resource,com.db,com.user.operations</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JerseyRESTService</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>CORSFilter</filter-name>
+        <filter-class>com.resource.CORSFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CORSFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+</web-app>
